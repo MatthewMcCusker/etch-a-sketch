@@ -1,0 +1,23 @@
+#container {
+    background-color: black;
+    display: flex;
+    height: 960px;
+    width: 960px;
+    gap: 1px;
+    justify-content: space-evenly;
+    border: 1px solid black;
+}
+
+.column {
+    flex-grow: 1;
+    flex-shrink: 1;
+    gap: 1px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.square {
+    background-color: white;
+    flex-grow: 1;
+}
