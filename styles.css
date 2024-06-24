@@ -5,11 +5,11 @@ body {
 #container {
     margin-left: auto;
     margin-right:auto;
-    background-color: black;
+    background-color: white;
     display: flex;
     height: 960px;
     width: 960px;
-    gap: 1px;
+    gap: 0px;
     justify-content: space-evenly;
     border: 10px solid black;
 }
@@ -17,7 +17,7 @@ body {
 .column {
     flex-grow: 1;
     flex-shrink: 1;
-    gap: 1px;
+    gap: 0px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -26,4 +26,5 @@ body {
 .square {
     background-color: white;
     flex-grow: 1;
+    opacity: 0;
 }

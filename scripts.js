@@ -11,6 +11,12 @@ function createSquare() {
     square.classList.add("square");
     square.addEventListener("mouseover", function (e) {
         e.target.style.background = getRandomRGB();
+        if(e.target.style.opacity == '') {
+            e.target.style.opacity = 0.1;
+        } else {
+            e.target.style.opacity = Math.min(1,parseFloat(e.target.style.opacity) + 0.1);
+        }
+        console.log(e.target.style.opacity)
     })
     return square;
 }
@@ -36,15 +42,18 @@ function initializeButton(){
         if (!isNaN(response)){
             response = Math.max(response, MIN_SIZE);
             response = Math.min(response, MAX_SIZE);
+            document.querySelector('h1').textContent = `${response} x ${response}`;
             createGrid(response);
         }
     })
 }
 
 const MIN_SIZE = 0;
-const DEFAULT_SIZE = 10;
+const DEFAULT_SIZE = 64;
 const MAX_SIZE = 100;
 
-createGrid(10);
+createGrid(DEFAULT_SIZE);
 
 initializeButton();
+
+console.log("0" + '0.1');
