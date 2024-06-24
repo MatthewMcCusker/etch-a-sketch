@@ -1,8 +1,16 @@
+function getRandomRGB() {
+    const rand255 = () => Math.floor(Math.random() * 256);
+    const r = rand255();
+    const g = rand255();
+    const b = rand255();
+    return `rgb(${r},${g},${b})`
+}
+
 function createSquare() {
     let square = document.createElement("div");
     square.classList.add("square");
     square.addEventListener("mouseover", function (e) {
-        e.target.style.background = "teal";
+        e.target.style.background = getRandomRGB();
     })
     return square;
 }
