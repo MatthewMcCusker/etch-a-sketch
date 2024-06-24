@@ -16,9 +16,6 @@ function createSquare() {
 }
 
 function createGrid(gridSize) {
-    if(gridSize > MAX_SIZE) {
-        gridSize = MAX_SIZE;
-    }
     const container = document.querySelector('#container');
     container.textContent = '';
     for (let i = 0; i < gridSize; i++){
@@ -32,7 +29,22 @@ function createGrid(gridSize) {
     }
 }
 
+function initializeButton(){
+    const button = document.querySelector('button');
+    button.addEventListener('click', function (e) {
+        let response = parseInt(prompt('Enter a grid size between 1-100'));
+        if (!isNaN(response)){
+            response = Math.max(response, MIN_SIZE);
+            response = Math.min(response, MAX_SIZE);
+            createGrid(response);
+        }
+    })
+}
+
+const MIN_SIZE = 0;
 const DEFAULT_SIZE = 10;
 const MAX_SIZE = 100;
 
 createGrid(10);
+
+initializeButton();
